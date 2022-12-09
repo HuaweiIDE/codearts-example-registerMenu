@@ -1,0 +1,52 @@
+{
+    "name": "codearts-example-registermenu",
+    "publisher": "huaweicloud",
+    "author": "youyuxun",
+    "keywords": [
+        "cloudide",
+        "plugin"
+    ],
+    "version": "0.0.1",
+    "license": "SEE LICENSE IN LICENSE",
+    "description": "",
+    "displayName": "codearts-example-registerMenu",
+    "icon": "resources/icons/logo.png",
+    "files": [
+        "src"
+    ],
+    "main": "dist/plugin.js",
+    "activationEvents": [ 
+        "*"
+    ],
+    "contributes": {
+		"commands": [
+			{
+				"command": "plugin.sayHello",
+				"title": "Say Hello"
+			}
+		]
+	}, 
+    "devDependencies": {
+        "@codearts/plugin": "latest",
+        "@codearts/plugin-packager": "latest",
+        "rimraf": "2.6.2",
+        "ts-loader": "^8.3.0",
+        "typescript": "^4.4.0",
+        "typescript-formatter": "7.2.2"
+    },
+    "dependencies": {
+        "@cloudide/nls": "latest"
+    },
+    "scripts": {
+        "prepare": "npm run clean && npm run build",
+        "clean": "rimraf dist",
+        "format-code": "tsfmt -r",
+        "watch": "tsc -watch",
+        "compile": "tsc",
+        "package": "codearts-pack -p",
+        "build": "npm run format-code && npm run compile"
+    },
+    "engines": {
+        "codearts": "^2.0.0"
+    }
+}
